@@ -6,26 +6,26 @@
 
 // Former goog.module ID: Blockly.blockRendering.Renderer
 
-import type {Block} from '../../block.js';
-import type {BlockSvg} from '../../block_svg.js';
-import {Connection} from '../../connection.js';
-import {ConnectionType} from '../../connection_type.js';
+import type { Block } from '../../block.js';
+import type { BlockSvg } from '../../block_svg.js';
+import { Connection } from '../../connection.js';
+import { ConnectionType } from '../../connection_type.js';
 import {
   InsertionMarkerManager,
   PreviewType,
 } from '../../insertion_marker_manager.js';
-import type {IRegistrable} from '../../interfaces/i_registrable.js';
-import type {Marker} from '../../keyboard_nav/marker.js';
-import type {RenderedConnection} from '../../rendered_connection.js';
-import type {BlockStyle, Theme} from '../../theme.js';
-import type {WorkspaceSvg} from '../../workspace_svg.js';
+import type { IRegistrable } from '../../interfaces/i_registrable.js';
+import type { Marker } from '../../keyboard_nav/marker.js';
+import type { RenderedConnection } from '../../rendered_connection.js';
+import type { BlockStyle, Theme } from '../../theme.js';
+import type { WorkspaceSvg } from '../../workspace_svg.js';
 
-import {ConstantProvider} from './constants.js';
-import {Drawer} from './drawer.js';
-import type {IPathObject} from './i_path_object.js';
-import {RenderInfo} from './info.js';
-import {MarkerSvg} from './marker_svg.js';
-import {PathObject} from './path_object.js';
+import { ConstantProvider } from './constants.js';
+import { Drawer } from './drawer.js';
+import type { IPathObject } from './i_path_object.js';
+import { RenderInfo } from './info.js';
+import { MarkerSvg } from './marker_svg.js';
+import { PathObject } from './path_object.js';
 import * as deprecation from '../../utils/deprecation.js';
 
 /**
@@ -66,7 +66,7 @@ export class Renderer implements IRegistrable {
    */
   init(
     theme: Theme,
-    opt_rendererOverrides?: {[rendererConstant: string]: any},
+    opt_rendererOverrides?: { [rendererConstant: string]: any },
   ) {
     this.constants_ = this.makeConstants_();
     if (opt_rendererOverrides) {
