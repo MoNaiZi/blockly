@@ -10,11 +10,8 @@
 
     import * as Blockly from '../build/blockly.loader.mjs';
     import '../build/blocks.loader.mjs';
-    import { dartGenerator } from '../build/dart.loader.mjs';
-    import { luaGenerator } from '../build/lua.loader.mjs';
     import { javascriptGenerator } from '../build/javascript.loader.mjs';
-    import { phpGenerator } from '../build/php.loader.mjs';
-    import { pythonGenerator } from '../build/python.loader.mjs';
+
 
     await loadScript('../build/msg/en.js');
     await loadScript('playgrounds/screenshot.js');
@@ -60,7 +57,7 @@
         toolbox: toolbox,
         toolboxPosition: 'start',
         // renderer: 'geras',
-        renderer: "zelos",
+        // renderer: "zelos",
         zoom: {
           controls: true,
           wheel: true,
@@ -191,10 +188,6 @@
     function toCode(lang) {
       var generator = {
         'JavaScript': javascriptGenerator,
-        'Python': pythonGenerator,
-        'PHP': phpGenerator,
-        'Lua': luaGenerator,
-        'Dart': dartGenerator,
       }[lang];
       var output = document.getElementById('importExport');
       output.value = generator.workspaceToCode(workspace);
@@ -429,18 +422,6 @@
       document
         .getElementById('to-code-js')
         .addEventListener('click', () => toCode('JavaScript'));
-      document
-        .getElementById('to-code-py')
-        .addEventListener('click', () => toCode('Python'));
-      document
-        .getElementById('to-code-php')
-        .addEventListener('click', () => toCode('PHP'));
-      document
-        .getElementById('to-code-lua')
-        .addEventListener('click', () => toCode('Lua'));
-      document
-        .getElementById('to-code-dart')
-        .addEventListener('click', () => toCode('Dart'));
 
       document
         .getElementById('airstrike')
@@ -565,10 +546,6 @@
     <input type="button" value="Load" id="import" />
     <br />
     <input id="to-code-js" type="button" value="To JavaScript" />
-    <input id="to-code-py" type="button" value="To Python" />
-    <input id="to-code-php" type="button" value="To PHP" />
-    <input id="to-code-lua" type="button" value="To Lua" />
-    <input id="to-code-dart" type="button" value="To Dart" />
     <br />
     <textarea id="importExport" style="width: 26%; height: 12em"></textarea>
   </p>
